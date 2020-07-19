@@ -1,0 +1,33 @@
+[ec2-user@ip-10-2-11-247 ~]$ mysql -h udacity-ndp-1-replica.c2vh6plr2pcv.us-east-2.rds.amazonaws.com -u admin -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 5.7.22-log Source distribution
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO heroes(name, alterego) VALUES('Steve Rogers', 'Captain America');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM heroes;
++----+--------------+-----------------+
+| id | name         | alterego        |
++----+--------------+-----------------+
+|  1 | Tony Stark   | Iron Man        |
+|  2 | Peter Parker | Spider-Man      |
+|  3 | Steve Rogers | Captain America |
++----+--------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql>

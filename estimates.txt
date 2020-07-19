@@ -1,0 +1,8 @@
+With this implementation a single AZ outage should have an minimum RTO of approximately 60 seconds
+(accordingly to AWS documentation https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html),
+however with a single Region outage it will take a minimum of approximately 5 minutes to promote the
+read replica.
+
+In case of RPO also we can face up to 60 seconds during AZ outage promotion process and 5 minutes
+during a region outage promotion process. This values however can be reduced if applications connected
+to database are shut down as soon as we detect AZ or region outages.
